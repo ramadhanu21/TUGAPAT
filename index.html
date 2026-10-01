@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Quicksand:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <style>
+      /* BAGIAN 1 */
+      body {
+        background-color: #c9b6ba;
+        color: #c9a4aa;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,h2,h3,h4,h5,
+      .font-display {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        color: #2c1a1d;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .bg-merah {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .nav-link {
+        color: rgba(171, 0, 19) !important;
+      }
+      .nav-item > .nav-link:hover,
+      .active {
+        border-bottom: 2px solid red !important;
+        color: red !important;
+      }
+      /* BAGIAN 2 */
+      #main-content {
+        background-color: rgb(235, 133, 137);
+      }
+
+      .text-content h1 {
+        font-size: 3rem;
+        line-height: 1.12;
+      }
+
+      @media (max-width: 768px) {
+        .text-content h1 {
+          font-size: 2rem;
+        }
+      }
+
+      .hero-section {
+        position: relative;
+        overflow: hidden;
+        padding: 4rem 0 5rem;
+      }
+
+      /* Maskot Animasi */
+      @keyframes floatMascot {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(1.5deg);
+        }
+      }
+      .animate-mascot {
+        animation: floatMascot 4.5s ease-in-out infinite;
+      }
+
+      .hero-image-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .hero-pod {
+        position: absolute;
+        inset: 1rem;
+        background: linear-gradient( 180deg, #f50404 0% rgba(236, 5, 5, 0.979) 60% #ee0505);
+        border-radius: 44px;
+        box-shadow: 0 14px 28px -6px rgba(231, 4, 49, 0.986);
+        border: 4px solid #f50303;
+        transform: rotate(2deg);
+      }
+
+      /* TRUST BAR */
+      .trust-bar {
+        padding: 2rem 0;
+        background-color: #fcfcfc;
+        border-top: 1px solid #9e243f;
+        border-bottom: 1px solid #ec9aacc4;
+      }
+      .trust-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background-color: #fce7ec;
+        color: #d84360;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      /* ==================== KATEGORI ==================== */
+
+.kategori-card {
+    background: #fff;
+    border: 1px solid #aa3f56;
+    border-radius: 24px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.kategori-card:hover {
+    box-shadow: 0 14px 28px -6px rgba(216, 67, 96, 0.12);
+    transform: translateY(-3px);
+}
+
+.kategori-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    background-color: #FCE7EC;
+    color: #D84360;
+    transition: transform 0.3s ease;
+}
+
+/* ==================== BEST SELLER ==================== */
+.bestseller-section {
+  padding: 4rem 0;
+  background-color: #e78585d5;
+  border-top: 1px solid #F2CED6;
+  border-bottom: 1px solid #F2CED6;
+}
+
+.product-card {
+  background-color: #FFF2F5;
+  border: 1px solid #F2CED6;
+  border-radius: 30px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 14px 28px -6px rgba(216, 67, 96, 0.12);
+}
+
+.product-img-wrap {
+  position: relative;
+  height: 220px;
+  background-color: #FFF8F0;
+  border: 1px solid #F2CED6;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-img-wrap.choco {
+  background-color: rgba(255, 238, 200);
+}
+
+.product-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #D84360;
+  border: 1px solid #F2CED6;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.product-tag.green { color: #5B8A61; }
+
+.product-tag .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #D84360;
+}
+
+.product-tag.green .dot {
+  background-color: #5B8A61;
+}
+
+.product-icon {
+  width: 200px;
+  height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-icon {
+  transform: scale(1.05);
+}
+
+.product-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(242, 206, 214, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===================== TENTANG ===================== */
+.tentang-section {
+    padding: 4rem 0;
+}
+
+.tentang-card {
+    background-color: #fff8f0;
+    border: 1px solid #f2ced6;
+    border-radius: 36px;
+    padding: 3rem 2rem;
+    box-shadow: 0 14px 28px -6px rgba(216, 67, 96, 0.12);
+}
+
+.mascot-badge-circle {
+    width: 192px;
+    height: 192px;
+    margin: 0 auto;
+    background: #0658f0;
+    border: 4px solid #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* ===================== TESTIMONI ===================== */
+.testimoni-section {
+    padding: 4rem 0;
+    background-color: #fff;
+    border-top: 1px solid #F2CED6;
+    border-bottom: 1px solid #F2CED6;
+}
+
+.testi-card {
+    background-color: #FFF2F5;
+    border: 1px solid #F2CED6;
+    border-radius: 24px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.testi-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    background-color: #FCE7EC;
+    color: #D84360;
+}
+
+.testi-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100px;
+}
+.testi-avatar.cream {
+    background-color: #FFF8F0;
+    color: #2C1A1D;
+}
+
+/* ==================== GALERI ==================== */
+.galeri-section {
+    padding: 4rem 0;
+}
+
+.galeri-box {
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    border: 1px solid #f2ced6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.galeri-box:hover {
+    opacity: 0.9;
+}
+
+.galeri-1 {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.171), rgba(0, 0, 0, 0.281)),
+        url('gambar/file_00000000f9d082069339bcbbce3d2701.png');
+    background-size: cover;
+}
+
+.galeri-2 {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.171), rgba(0, 0, 0, 0.281)),
+        url('gambar/file_00000000c824821199a739a14b38af70.png');
+    background-size: cover;
+}
+
+.galeri-3 {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.171), rgba(0, 0, 0, 0.281)),
+        url('gambar/file_00000000e9d8821183b524ce74478dbc.png');
+    background-size: cover;
+}
+
+.galeri-4 {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.171), rgba(0, 0, 0, 0.281)),
+        url('gambar/file_000000000cc882119c191dabf08e2ced.png');
+    background-size: cover;
+}
+
+/* ===================== CTA ===================== */
+.cta-section { padding: 4rem 0; }
+
+.cta-box {
+    background: linear-gradient(90deg, #D84360 0%, #B52B46 100%);
+    border-radius: 36px;
+    padding: 3rem 2rem;
+    color: #fff;
+    box-shadow: 0 14px 28px -6px rgba(216, 67, 96, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 256px;
+    height: 256px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+/* ===================== FOOTER ===================== */
+.footer-tntyna {
+    background-color: #fff;
+    border-top: 1px solid #F2CED6;
+    padding: 4rem 0 3rem;
+}
+
+.footer-tntyna h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.footer-tntyna a {
+    color: #73757C;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s ease;
+}
+
+.footer-tntyna a:hover { color: #D84360; }
+
+.social-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background-color: #FFF8F0;
+    border: 1px solid #F2CED6;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #2C1A1D;
+    transition: color 0.2s ease;
+}
+
+.social-btn:hover { color: #D84360; }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-merah sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="GAMBAR/logo-1-1-removebg.png"
+            alt=""
+            width="70"
+            height="70"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">produk</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">promo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">tentang kami</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav gap-3">
+            <li class="nav-item">
+              <a href="" class="btn btn-light position-relative rounded-pill">
+                <i class="bi bi-bag-check-fill"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                >
+                  <span class="visualyy hidden">99+</span>
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="btn btn-danger">pesan sekrang</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+      <section id="home" class="hero-section">
+        <div class="container position-relative" style="z-index: 1">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+              <div class="col-lg-7 text-content text-center text-lg-start">
+                <h1 class="mb-3">Langkah Keren, Gaya Makin Berani</h1>
+                <p
+                  class="text-secondary mb-4 mx-auto mx-lg-0"
+                  style="max-width: 36rem; color: #73575c !important"
+                >
+                  Kalau mau gaya yang lebih keren dan catchy, bisa pilih: Step
+                  Up Your Style with TUGAPAT Sepatu Keren untuk Setiap Langkah
+                  Temukan Gaya, Mulai Langkahmu TUGAPAT — Your Style, Your Step
+                  Bikin Langkahmu Lebih Berarti
+                </p>
+                <div
+                  class="action d-flex flex-column flex-sm-row gap-3 juastify-content-canter justify-content-lg-start"
+                >
+                  <a
+                    href="#"
+                    class="btn btn-danger fw-bold px-4 py-3 rounded-4 d-inline-flex aligm-items-center justify-content-center gap-2"
+                    >Lihat Menu</a
+                  >
+                  <a
+                    href="#"
+                    class="btn btn-light fw-bold px-4 py-3 rounded-4 border"
+                    >pesan sekarang</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="hero-image-wrapper">
+                <div class="hero-pod"></div>
+                <img
+                  src="GAMBAR/gambar hero.png"
+                  alt="maskot tugapat"
+                  class="img-fluid position-relative animate-mascot"
+                  style="z-index: 1; max-width: 380px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST BAR -->
+      <section class="trust-bar">
+        <div class="container">
+          <div class="row g-4 text-center">
+            <div class="col-6 col-md-3">
+              <div class="d-flex align-items-center justify-content-center gap-3">
+                <div class="trust-icon">
+                  <i class="bi bi-people"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 fw-bold mb-0">Nomor Satu Di Indonesia</h4>
+                  <p class="small text-secondary mb-0">Pilihan utama untuk koleksi sepatu sport berkualitas</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="d-flex align-items-center justify-content-center gap-3">
+                <div class="trust-icon">
+                 <i class="bi bi-flag"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 fw-bold mb-0"> Sepatu Buatan Indonesia</h4>
+                  <p class="small text-secondary mb-0">Diproduksi di Indonesia dengan kualitas sesuai kebutuhan</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="d-flex align-items-center justify-content-center gap-3">
+                <div class="trust-icon">
+                <i class="bi bi-shield-check"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 fw-bold mb-0">Garansi Satu Minggu</h4>
+                  <p class="small text-secondary mb-0">Perlindungan produk selama satu minggu pembelian</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="d-flex align-items-center justify-content-center gap-3">
+                <div class="trust-icon">
+                <i class="bi bi-trophy"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 fw-bold mb-0">Produk Pilihan TUGAPAT</h4>
+                  <p class="small text-secondary mb-0"> Sepatu sport untuk berbagai aktivitas sehari-hari</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- KATEGORI CONTENT -->
+      <section id="kategori" class="py-5">
+        <div class="container">
+          <div class="text-center mx-auto mb-5" style="max-width: 36rem;">
+            <span class="text-danger fw-bold text-uppercase small" style="letter-spacing: 0.05em">Koleksi Sepatu Sport</span>
+          <h2 class="mt-1">Temukan Sepatu Sport Impianmu</h2>
+        </div>
+          <div class="row g-4">
+            <div class="col-6 col-md-3">
+              <div class="kategori-card">
+                <div class="kategori-icon">
+                  <i class="bi bi-activity"></i>
+                </div>
+                <h3 class="h6 mb-1">Sepatu Running Pria</h3>
+                <p class="small text-secondary mb-0">Sepatu lari nyaman untuk aktivitas harian</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="kategori-card">
+                <div class="kategori-icon">
+                  <i class="bi bi-heart"></i>
+                </div>
+                <h3 class="h6 mb-0">Sepatu Lari Wanita</h3>
+                <p class="small text-secondary mb-0">Model stylish untuk olahraga dan gaya</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="kategori-card">
+                <div class="kategori-icon">
+                  <i class="bi bi-emoji-smile"></i>
+                </div>
+                <h3 class="h6 mb-0">Sepatu Olahraga Anak</h3>
+                <p class="small text-secondary mb-0">Karya anak bangsa kualitas terbaik</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="kategori-card">
+                <div class="kategori-icon">
+                  <i class="bi bi-flag"></i>
+                </div>
+                <h3 class="h6 mb-0">Koleksi Sepatu Lokal</h3>
+                <p class="small text-secondary mb-0">[Karya anak bangsa kualitas terbaik</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BEST SELLER -->
+<section id="bestseller" class="bestseller-section">
+  <div class="container">
+      <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-5">
+          <div>
+              <span class="text-danger fw-bold text-uppercase small" style="letter-spacing: .05em;">Koleksi Sepatu</span>
+              <h2 class="mt-1">Produk Unggulan Pilihan</h2>
+          </div>
+
+          <p class="text-secondary small mb-0 mt-2 mt-md-0" style="max-width: 24rem;">
+            Temukan berbagai pilihan sepatu sport lokal berkualitas tinggi untuk menemani aktivitas harian Anda
+          </p>
+      </div>
+
+      <div class="row g-4">         
+               <!-- Card 1 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+                <div>
+                    <div class="product-img-wrap">
+                        <div class="product-tag">
+                            <span class="dot"></span>
+                            <span>Sport</span>
+                        </div>
+                        <img src="GAMBAR/gambar_sepatu_2-removebg-preview (1).png" alt="" class="product-icon">
+                    </div>
+
+                    <div class="mt-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="small fw-semibold text-secondary text-uppercase"
+                                  style="letter-spacing: .05em;">
+                                  Sepatu Sport
+                            </span>
+
+                            <span class="small fw-bold text-warning">
+                                <i class="bi bi-star-fill"></i> 4.9 (184)
+                            </span>
+                        </div>
+
+                        <h3 class="h5 mt-2 mb-1">Tugapat Sport Running</h3>
+
+                        <p class="small text-secondary mb-0">
+                          Sepatu olahraga ringan dan nyaman untuk menemani aktivitas lari harian Anda
+                        </p>
+                    </div>
+                </div>
+                  <div class="product-footer">
+                      <div>
+                          <span class="d-block" style="font-size: 11px; color: #73757c;"></span>
+                          <span class="font-display fw-bold fs-5"> 20.000.000</span>
+                      </div>
+
+                      <button
+                          onclick="handleAddToCart('Strawberry Velvet Bento', 88000)"
+                          class="btn btn-danger btn-sm fw-bold rounded-3 d-inline-flex align-items-center gap-2"
+                      >
+                          <i class="bi bi-plus-lg"></i> Pesan
+                      </button>
+                  </div>
+              </article>
+          </div>
+           <!-- Card 2--> 
+           <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+                <div>
+                    <div class="product-img-wrap">
+                        <div class="product-tag">
+                            <span class="dot"></span>
+                            <span>Casual</span>
+                        </div>
+                        <img src="GAMBAR/gambar_sepatu_n-removebg-preview.png" alt="" class="product-icon">
+                    </div>
+
+                    <div class="mt-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="small fw-semibold text-secondary text-uppercase"
+                                  style="letter-spacing: .05em;">
+                                  Sepatu Casual
+                            </span>
+
+                            <span class="small fw-bold text-warning">
+                                <i class="bi bi-star-fill"></i> 4.9 (184)
+                            </span>
+                        </div>
+
+                        <h3 class="h5 mt-2 mb-1">Tugapat Casual Trainer</h3>
+
+                        <p class="small text-secondary mb-0">
+                          Sepatu  Casual dengan desain modern untuk gaya hidup aktif Anda
+                        </p>
+                    </div>
+                </div>
+                  <div class="product-footer">
+                      <div>
+                          <span class="d-block" style="font-size: 11px; color: #73757c;"></span>
+                          <span class="font-display fw-bold fs-5"> 51.000.000</span>
+                      </div>
+
+                      <button
+                          onclick="handleAddToCart('Strawberry Velvet Bento', 88000)"
+                          class="btn btn-danger btn-sm fw-bold rounded-3 d-inline-flex align-items-center gap-2"
+                      >
+                          <i class="bi bi-plus-lg"></i> Pesan
+                      </button>
+                  </div>
+              </article>
+          </div>
+          <!-- Card 3--> 
+          <div class="col-md-6 col-lg-4">
+            <article class="product-card">
+                <div>
+                    <div class="product-img-wrap">
+                        <div class="product-tag">
+                            <span class="dot"></span>
+                            <span>Active</span>
+                        </div>
+                        <img src="GAMBAR/Cover-MP-Ambara-Mid-10-removebg-ddd.png" alt="" class="product-icon">
+                    </div>
+
+                    <div class="mt-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="small fw-semibold text-secondary text-uppercase"
+                                  style="letter-spacing: .05em;">
+                                  Sepatu Active
+                            </span>
+
+                            <span class="small fw-bold text-warning">
+                                <i class="bi bi-star-fill"></i> 4.9 (184)
+                            </span>
+                        </div>
+
+                        <h3 class="h5 mt-2 mb-1">Tugapat Active Daily</h3>
+
+                        <p class="small text-secondary mb-0">
+                          Pilihan sepatu serbaguna yang pas untuk berbagai aktivitas olahraga ringan.
+                        </p>
+                    </div>
+                </div>
+                  <div class="product-footer">
+                      <div>
+                          <span class="d-block" style="font-size: 11px; color: #7c7373;"></span>
+                          <span class="font-display fw-bold fs-5"> 33.000.000</span>
+                      </div>
+
+                      <button
+                          onclick="handleAddToCart('Strawberry Velvet Bento', 88000)"
+                          class="btn btn-danger btn-sm fw-bold rounded-3 d-inline-flex align-items-center gap-2"
+                      >
+                          <i class="bi bi-plus-lg"></i> Pesan
+                      </button>
+                  </div>
+              </article>
+          </div>
+         </div>
+      </div>
+    </section>
+
+
+<!-- ===================== TENTANG ===================== -->
+<section id="tentang" class="tentang-section">
+    <div class="container">
+        <div class="tentang-card">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 text-center">
+                    <div class="mascot-badge-circle">
+                        <img src="GAMBAR/WhatsApp_Image_2026-09-24-removebg-preview.pnggggg.png" alt="">
+                    </div>
+                    <h3 class="h5 mt-4">Langkah Nyaman dan Dinamis untuk Setiap Aktivitas Anda</h3>
+                    <p class="small text-secondary mb-0">
+                      Koleksi sepatu sport dan casual TUGAPAT made in Indonesia
+                    </p>
+                </div>
+
+                <div class="col-lg-7">
+                    <span
+                        class="text-danger fw-bold text-uppercase small"
+                        style="letter-spacing: 0.05em"
+                    >
+                    Mengenal TUGAPAT
+                    </span>
+
+                    <h2 class="mt-2">
+                      Jajaran produk sepatu sport dan casual TUGAPAT yang tertata rapi di rak display modern
+                    </h2>
+
+                    <p class="text-black">
+                      TUGAPAT hadir untuk memenuhi kebutuhan alas kaki Anda dengan pilihan sepatu sport, casual, dan active yang dirancang bagi semua usia. Mengusung identitas produksi lokal, setiap pasang sepatu dikerjakan dengan standar buatan Indonesia yang mendukung berbagai kegiatan sehari-hari maupun olahraga secara optimal.
+                    </p>
+
+                    <div class="row g-3 pt-2">
+                        <div class="col-sm-6">
+                            <div
+                                class="bg-white rounded-3 border p-3 small fw-semibold d-flex align-items-center gap-2"
+                                style="border-color: #f2ced6 !important"
+                            >
+                                <span
+                                    class="d-inline-block rounded-circle bg-danger"
+                                    style="width: 8px; height: 8px"
+                                ></span>
+                                Koleksi Sport, Casual, dan Active
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div
+                                class="bg-white rounded-3 border p-3 small fw-semibold d-flex align-items-center gap-2"
+                                style="border-color: #f2ced6 !important"
+                            >
+                                <span
+                                    class="d-inline-block rounded-circle bg-danger"
+                                    style="width: 8px; height: 8px"
+                                ></span>
+                                Produksi Asli Made in Indonesia
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===================== TESTIMONI ===================== -->
+<section id="testimoni" class="testimoni-section">
+  <div class="container">
+      <div class="text-center mx-auto mb-5" style="max-width: 36rem;">
+          <span class="text-danger fw-bold text-uppercase small" style="letter-spacing: .05em;">Kata Mereka</span>
+          <h2 class="mt-1">Ulasan Pelanggan Setia</h2>
+      </div>
+
+      <div class="row g-4">
+          <div class="col-md-4">
+              <div class="testi-card">
+                  <div>
+                      <div class="text-warning mb-2">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p class="small mb-0">bahan sepatunya bneran permium sapatunya sangat ringan untuk beraktivitas olahraga maupun aktivitas biasah!"</p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                      <div class="testi-avatar"><img src="GAMBAR/IMG-20260827-WA0000.jpg.jpeg123.jpeg" alt=""></div>
+                      <div>
+                          <h4 class="h6 mb-0">Combate</h4>
+                          <span class="small text-secondary">Jakarta Selatan</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4">
+              <div class="testi-card">
+                  <div>
+                      <div class="text-warning mb-2">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p class="small mb-0">Packaging pengirimannya sangat aman. Cocok banget buat gift ulang tahun adik saya yang suka berolaraga."</p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                      <div class="testi-avatar cream"><img src="GAMBAR/WhatsApp Image 2026-09-25 at 11.36.36.jpegpak jol.jpeg" alt=""></div>
+                      <div>
+                          <h4 class="h6 mb-0">Rahull Gonzales</h4>
+                          <span class="small text-secondary">Surabaya</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4">
+              <div class="testi-card">
+                  <div>
+                      <div class="text-warning mb-2">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p class="small mb-0">sepatu casualnya luar biasa keren. bahan sepatunya bagus dan desain sepatunya bagus. saya sangat puas rasanya!"</p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                      <div class="testi-avatar"><img src="GAMBAR/WhatsApp Image 2026-09-25 at 11.36.36.jpegalwann.jpeg" alt=""></div>
+                      <div>
+                          <h4 class="h6 mb-0">Alwan Mahadana</h4>
+                          <span class="small text-secondary">Bandung</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- GALERI --> 
+<section class="galeri-section">
+  <div class="container text-center">
+   <span 
+   class="text-danger fw-bold text-uppercase small"
+   style="letter-spacing: 0.05em"
+   >#Tugapat</span
+   >
+   <h2 class="mt-1 mb-4">momen manis di instagram</h2>
+
+   <div class="row g-3">
+    <div class="col-6 col-md-3">
+      <div class="galeri-box galeri-1">@Tugapat</div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="galeri-box galeri-2">#Blindboxseries</div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="galeri-box galeri-3">#fresBakes</div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="galeri-box galeri-4">#TatynaArtisan</div>
+    </div>
+   </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta-section">
+  <div class="container">
+      <div class="cta-box">
+          <div class="row align-items-center g-4 position-relative" style="z-index: 1;">
+              <div class="col-md-8 text-center text-md-start">
+                  <h2 class="text-white mb-2">Temukan Koleksi Sepatu Sport Terbaik Buatan Indonesia!</h2>
+                  <p class="text-white-50 mb-0">
+                      Pesan sebelum jam 14:00 WIB untuk pengiriman hari ini dengan kemasan berpendingin higienis.
+                  </p>
+              </div>
+              <div class="col-md-4 text-center text-md-end">
+                  <a href="#bestseller" class="btn btn-light fw-bold text-danger px-4 py-3 rounded-4">
+                      Beli Sekarang
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer-tntyana">
+  <div class="container">
+      <div class="row g-4 pb-4 border-bottom" style="border-color: rgba(242, 206, 214, 0.6) !important;">
+          <div class="col-md-4">
+              <div class="d-flex align-items-center mb-3">
+                  <img src="gambar/logo-transparant1-1.png" alt="" width="48" class="me-2" />
+                  <span class="font-display fs-4 fw-bold">TUGAPAT<span class="text-danger">.</span></span>
+              </div>
+              <p class="small text-secondary mb-2">
+                Toko sepatu terkemuka yang menghadirkan koleksi sepatu sport berkualitas tinggi buatan Indonesia terbaik nomor satu untuk memenuhi kebutuhan seluruh usia..
+              </p>
+              <p class="small fw-semibold mb-0">Jam Operasional: 08:00 - 20:00 WIB</p>
+          </div>
+
+          <div class="col-6 col-md-2">
+              <h4>Navigasi</h4>
+              <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                  <li><a href="#home">Beranda</a></li>
+                  <li><a href="#kategori">Produk</a></li>
+                  <li><a href="#bestseller">Kategori</a></li>
+                  <li><a href="#tentang">Kontak</a></li>
+              </ul>
+          </div>
+
+          <div class="col-6 col-md-3">
+              <h4>Informasi</h4>
+              <ul class="list-unstyled d-flex flex-column gap-2 mb-0"> 
+                  <li><a href="#">Cara Pemesanan</a></li>
+                  <li><a href="#">Pengiriman</a></li>
+                  <li><a href="#">Syarat & Ketentuan</a></li>
+                  <li><a href="#">Kebijakan Privasi</a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-3">
+              <h4>Kontak</h4>
+              <p class="small text-secondary mb-3">
+                pasar 5 sidodadi R
+              </p>
+              <div class="d-flex align-items-center gap-2">
+                  <a href="#" class="social-btn" aria-label="Instagram Tntyana">
+                      <i class="bi bi-instagram"></i>
+                  </a>
+                  <a href="#" class="social-btn" aria-label="WhatsApp Pemesanan">
+                      <i class="bi bi-whatsapp"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <div class="pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center small text-secondary gap-2">
+        <p class="mb-0">@ 2026 Tntyna cake. seluruh hak cipta dilindungi undang-undang.</p>
+        <p class="mb-0">Dibuat dengan standar kualitas ui ux pro max.</p>
+      </div>
+      </div>
+      </footer>
+    </main>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
